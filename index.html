@@ -28,6 +28,136 @@
     <title>Document</title>
   </head>
   <body>
+    <div class="header-box">
+      <div class="box-1">
+        <button class="badge text-bg-primary">Sort Quantity</button>
+      </div>
+      <div>
+        <button class="badge text-bg-secondary">Sort Date</button>
+      </div>
+      <div>
+        <button class="badge text-bg-success">SortName</button>
+      </div>
+      <div>
+        <button class="badge text-bg-danger">Out of stock</button>
+      </div>
+      <div>
+        <button class="badge text-bg-warning">Find by name</button>
+      </div>
+      <input class="find" />
+    </div>
+    <div class="inp-box">
+      <div class="div-inp">
+        <label for="">ID</label>
+        <input type="text" name="" id="inp-id" />
+        <p class="text text-warn-id hidden">
+          ID phải lớn hơn 2 kí tự và lớn hơn 0
+        </p>
+      </div>
+      <div class="div-inp">
+        <label for="">Tên SP</label>
+        <input type="text" name="" id="inp-tenSP" />
+        <p class="text text-warn-name hidden">Tên sp phải lớn hơn 6 kí tự</p>
+      </div>
+      <div class="div-inp">
+        <label for="">Quantity</label>
+        <input type="number" name="" id="inp-quantity" />
+        <p class="text text-warn-quantity hidden">
+          số lượng sản phải phải lớn hơn 2 kí tự và lớn hơn 0
+        </p>
+      </div>
+      <div class="div-inp">
+        <label for="">Giá Tiền</label>
+        <input type="text" name="" id="inp-price" />
+        <p class="text text-warn-price hidden">
+          Giá sản phẩm phải lớn hơn 2 kí tự và lớn hơn 0
+        </p>
+      </div>
+
+      <div class="div-inp">
+        <label for="">Ngày tháng</label>
+        <input type="date" name="" id="inp-date" />
+        <p class="text text-warn-date hidden">Vui lòng nhập đúng ngày tháng</p>
+      </div>
+      <div>
+        <button class="btn-add" onclick="add()">ADD PRODUCT</button>
+      </div>
+    </div>
+    <table id="task-table" class="table table-striped">
+      <!-- <tr>
+        <td>ID</td>
+        <td>Tên SP</td>
+        <td>SỐ lượng</td>
+        <td>Giá tiền</td>
+        <td>Ngày tháng</td>
+        <td>action</td>
+      </tr> -->
+    </table>
+
+    <div id="open-delete" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <input type="text" />
+          </div>
+          <div class="modal-footer">
+            <button id="btn-delete" type="button" class="btn btn-primary">
+              Save changes
+            </button>
+            <button
+              id="btn-delete-off"
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="open-edit" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title modal-title-edit">Modal title</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body modal-body-edit"></div>
+          <div class="modal-footer">
+            <button id="btn-edit" type="button" class="btn btn-primary">
+              Save changes
+            </button>
+            <button
+              id="btn-edit-off"
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- JavaScript Bundle with Popper -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
